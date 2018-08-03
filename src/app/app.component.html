@@ -1,4 +1,29 @@
 <div>
+    <!-- <vg-player style="height: 50px;">
+        <vg-controls>
+            <vg-play-pause></vg-play-pause>
+            <vg-playback-button></vg-playback-button>
+
+            <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+
+            <vg-scrub-bar>
+                <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+            </vg-scrub-bar>
+
+            <vg-time-display vgProperty="left" vgFormat="mm:ss"></vg-time-display>
+            <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+            <vg-mute></vg-mute>
+
+            <vg-fullscreen></vg-fullscreen>
+        </vg-controls>
+
+        <audio #media [vgMedia]="media" id="myAudio" preload="auto">
+            <source src="https://lyra-streaming-api-test.nonprod-prognplay-ihm.com/api/v1/audio/5b5871144cedfd0009d0b55c+1533083278000+p_DuUIS567EJVgtx9Ffsr9B-rURN-DCdYe4T88-PtIw" type="audio/aac">
+        </audio>
+    </vg-player> -->
+
     <vg-player (onPlayerReady)="onPlayerReady($event)">
         <vg-overlay-play></vg-overlay-play>
         <vg-buffering></vg-buffering>
@@ -21,19 +46,8 @@
             <vg-volume></vg-volume>
         </vg-controls>
 
-        <video [vgMedia]="media" #media [vgHls]="'https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8'" (onGetBitrates)="hlsBitrates = $event" id="my-video" type="video/mp4"></video>
+        <video [vgMedia]="media" #media [vgHls]="'https://masterapikey@lyra-streaming-api-test.nonprod-prognplay-ihm.com:443/api/v1/station/5/archive.m3u8?start=2018-07-10T21:38:31.000Z&duration=20'" (onGetBitrates)="hlsBitrates = $event" id="my-video">
+        </video>
     </vg-player>
 
-
-    <button (click)="skipTime()">Skip Time</button>
-
-
-
-
-
-    <div>
-        <video id="hlsNative" #hlsNative controls></video>
-    </div>
-
-    <button (click)="skipTimeNative()">Skip Time Native</button>
 </div>

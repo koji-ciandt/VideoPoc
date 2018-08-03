@@ -14,14 +14,14 @@ export class AppComponent implements OnInit {
   api: VgAPI;
 
   ngOnInit() {
-    if (Hls.isSupported()) {
-      const hls = new Hls();
-      hls.loadSource('https://video-dev.github.io/streams/x36xhzz/x36xhzz.m3u8');
-      hls.attachMedia(this.hlsNative.nativeElement);
-      hls.on(Hls.Events.MANIFEST_PARSED, function () {
-        this.hlsNative.nativeElement.play();
-      });
-    }
+    // if (Hls.isSupported()) {
+    //   const hls = new Hls();
+    //   hls.loadSource('https://lyra-streaming-api-test.nonprod-prognplay-ihm.com/api/v1/audio/5b5871144cedfd0009d0b55c+1533083278000+p_DuUIS567EJVgtx9Ffsr9B-rURN-DCdYe4T88-PtIw');
+    //   hls.attachMedia(this.hlsNative.nativeElement);
+    //   hls.on(Hls.Events.MANIFEST_PARSED, function () {
+    //     this.hlsNative.nativeElement.play();
+    //   });
+    // }
   }
 
   onPlayerReady(api: VgAPI) {
@@ -32,7 +32,7 @@ export class AppComponent implements OnInit {
     this.api.getDefaultMedia().currentTime = 10;
   }
 
-  skipTimeNative() {
-    this.hlsNative.nativeElement.currentTime = 10;
-  }
+  // skipTimeNative() {
+  //   this.hlsNative.nativeElement.currentTime = 10;
+  // }
 }
